@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <button id="myButton">Click me to see what happens</button>
+
+        <button id="otherButton">Total</button>
+
+
+        <button id="firstButton">I am correct</button>
+        <button id="secondButton">No, I am the one who is correct</button>
+
+        <p id="argueParagraph"></p>
+
+    </body>
+    <script>
+        /* What is the syntax for adding an event to an element using 
+        the addEventListener in JS
+        element.addEventLister(event, function, useCapture);
+
+        The first parameter refers to the type of the event that we want to 
+        listen to..eg is click, change, copy, cut, dbclick, drag, blur,
+        The seconf parameter is the function that we want to call when the event 
+        occurs.
+
+        The third parameter is optional.
+
+
+        */
+
+        function displayAlert(){
+            alert("Hello World!!!!!!!!!! 888888");
+        }
+
+        function dontStepOnMe(){
+            alert("You are stepping on me");
+        }
+
+        function add(p1, p2){
+            alert(p1 + p2);
+        }
+
+        document.getElementById("myButton").addEventListener("click", displayAlert);
+
+        document.getElementById("myButton").addEventListener("click", dontStepOnMe);
+
+        /* Passing parameter with addEventListener method
+
+        Syntax:
+        element.addEventLister(event, function(){ CallFunctionWithParameter(p1, p2, p3);});
+        */
+       document.getElementById("otherButton").addEventListener("click", function(){
+           add(2, 4);
+       });
+
+
+       /* We are going to create two button that will argue with each other. 
+       The first button will contain the text "I am correct" and when click it will
+       place the text I am correct inside a paragraph.
+       The second button will contaoi the text, "No, I am the one who is correct". and
+       when clicked, this button will replace the content inside the the same paragraph 
+       as the one used by the first button with  a text "No, I am the one who is correct".
+       */
+      function firstButtonClicked(){
+          document.getElementById("argueParagraph").innerHTML = "I am correct";
+      }
+
+      function secondButtonClicked(){
+          document.getElementById("argueParagraph").innerHTML = "No, I am the one who is correct";
+      }
+
+      document.getElementById("firstButton").addEventListener("click", firstButtonClicked );
+      document.getElementById("secondButton").addEventListener("click", secondButtonClicked );
+
+
+
+
+
+    </script>
+</html>

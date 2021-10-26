@@ -24,8 +24,8 @@
            //window.alert("Lehman College"); 
 
            // This is also another comment
-           console.log("Hello World");
-           console.log( "9 + 1.2");
+           //console.log("Hello World");
+           //console.log( "9 + 1.2");
 
            //More comments over here
 
@@ -56,18 +56,18 @@
           qoutes as we had with a text. 
           */
 
-          console.log(name);
+          //console.log(name);
 
           score = 10;
-          console.log(score);
+          //console.log(score);
 
           /* The value inside a variable can change
           */
          score = 90;
-         console.log(score);
+         //console.log(score);
          
          score = 100;
-         console.log(score);
+         //console.log(score);
 
          /* String and numbers
          
@@ -82,7 +82,7 @@
        
         score = examScore + extraCreditScore; // addition
 
-        console.log(score);
+        //console.log(score);
 
         let y = 4 * 5; //multiplying
         y = 20 / 5;// Division
@@ -127,13 +127,188 @@
 
         */
 
+        let part1Score;
+        let part2Score;
+
+        part1Score = 45;
+        part2Score = 50;
+        let totalExam1Score =  part1Score + part2Score;
+
+        let examP =  totalExam1Score * 0.1;
+
+        //console.log(examP);
+
+        let totalExam2Score = 100;
+        let exam2P =  totalExam2Score * 0.15;
+        //console.log(exam2P);
+
+
+        /* Below we are going to add
+        JS function examples.*/
+
+        function printName(){
+            /* This is the body of the
+            the function.
+
+            The function body is the code
+            that gets executed whenever 
+            the function called.
+
+            This function will print a
+            name whenever it is called.
+            */
+           console.log("Steven Fulakeza");
+        }
+
+        /* A function does nothing 
+        until it has been called.
+
+        How do you call a function?
+
+        functionName(argumentToTheParameter);
+
+
+        */
+       printName();
+       printName();
+       printName();
+
+
+       /* Function parameters.
+       A parameter is variable that supplies
+       input(information, data) to the body
+       of the function. This data comes from
+       whereever the function has from.
+
+       An argument is a value that is provided
+       to a function's parameter during a
+       function call.
+
+       Write a function that takes two
+       parameters and display the sum 
+       of the values that would inside 
+       the parameters.
+       */
+
+       //alert(90);
+
+       function displaySum(num1, num2){
+           // 
+           let total = num1 + num2;
+           console.log(total);
+       }
+
+       /* The parameters are placeholders 
+       for a value that is supplied during
+       a function call.*/
+
+       displaySum(2, 5);
+       displaySum(12, 15);
+       displaySum(999, -1);
+
+       /*
+
+       Activity
+       Write a function that takes 
+       three parameters and returns 
+       the product of the values
+       that would be in these parameters.
+       You should name your function to
+       be printProduct.
+       */
+
+       function printProduct(num1, num2, num3){
+           let total = num1 * num2 * num3;
+           return total;
+       }
+
+       printProduct(1, 2, 4);
+
+       printProduct(2, 5, 10);
+
+       /* Sometimes we want a function
+       to produce a value from a calculation
+       instead printing. We want the result
+       to taken back to whereever a function
+       was called so that the result can be
+       used for another computation(calculation).
+
+       Who do we do that?
+       return statement.
+
+       A function can return single value
+       to whereever it called from using
+       the return statement. 
+
+       If a function is missing a return
+       statement, by default it returns
+       undefined.
+
+
+       Example: write a function that takes
+       two parameters and returns the average
+       of the numbers that would in 
+       the parameters.
+
+       7, 9, 9, 10.
+       To find an average we need to add all
+       these numbers and then divide that number
+       by the total count of the numbers
+       */
+
+       function findAverage(num1, num2){
+           let total = num1 + num2;
+           let avg = total / 2;
+
+           return avg;
+       }
+
+       /*
+       Now, the value that is returned 
+       from a functiion call can be used 
+       in many ways:
+       1. The value can be kept into a variable
+       2. You can be able to print the value
+       for display
+       3. It can be used used as part of 
+       an expression.*/
+
+       let average = findAverage(9, 11);
+
+       console.log(average);
+
+       
 
 
         </script>
 
     </head>
     <body>
-        <h1>Introduction to JavaScript!!!!!!!</h1>
+        <h1 id="headtitle">Introduction to JavaScript!!!!!!!</h1>
+
+        <button onclick="document.getElementById('demo').innerHTML = Date()">The time is?</button>
+
+        <p id="demo"></p>
 
     </body>
+
+    <script>
+    
+    let x = document.getElementById("headtitle").innerHTML;
+
+    /* What if we want to change the content that is 
+    inside a particular element.
+    */
+   document.getElementById("headtitle").innerHTML = "CUNY, Lehman College";
+
+   
+
+   /* How can we change the style of an element with JS
+   background-color
+   */
+  document.body.style.backgroundColor = "red";
+  document.getElementById("headtitle").style.backgroundColor = "yellow";
+
+    //console.log(x);
+    </script>
 </html>
