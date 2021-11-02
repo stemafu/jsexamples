@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <form id="myForm">
+            <label>Enter your exam score:</label>
+            <input type="number" id="examScore">
+
+            <input type="submit">
+        </form>
+
+        <p id="letterGrade"></p>
+    </body>
+    <script>
+        /* We want to write a simple if statement code below.
+        */
+
+        let userAge = 19;
+
+        /*if(userAge >= 18){
+            console.log("You can be able to vote...");
+        }*/
+
+        /* Below we add an example of an if-else statement */
+
+        if(userAge >= 18){
+            // This is the code that gets executed when the condition is true
+            console.log("You can be able to vote...");
+        }else{
+            //This is the code that gets executed when the condition is false.
+            console.log("You cannot be able to vote. You must be 18 and above to vote!");
+        }
+        
+
+        /* Below we will create an example of an if else if statement.
+        An if else if statement is a multiway decision structure.
+
+        In this example, we will take an exam score (number) and produce a
+        letter grade.
+        90 and above => A
+        80 and above => B
+        70 and above => C
+        and 60 and above => D
+        and 59 and below => F
+
+        */
+
+        /*let examScore = 80;
+
+        if(examScore >= 90){
+            console.log("A");
+        }else if(examScore >= 80){
+            console.log("B");
+        }else if (examScore >= 70){
+            console.log("C");
+        }else if(examScore >= 60){
+            console.log("D");
+        }else{
+            console.log("F");
+        }
+        */
+
+
+        /* Let us add a listener to the form*/
+        document.getElementById("myForm").addEventListener("submit", formSubmitHandler);
+
+        function formSubmitHandler(event){
+
+            // What should be our next step?
+
+            // Get the value from the form
+            let examScore = document.getElementById("examScore").value;
+            
+
+            // We have to convert the string value above to a number
+            examScore = parseInt(examScore);
+
+            let lg = "";
+            if(examScore >= 90){
+                lg = "A";
+            }else if(examScore >= 80){
+                lg = "B";
+            }else if (examScore >= 70){
+                lg = "C";
+            }else if(examScore >= 60){
+                lg = "D";
+            }else{
+                lg = "F";
+            }
+
+            //You want to update your webpage
+            document.getElementById("letterGrade").innerHTML =  lg;
+
+
+
+
+            //console.log(examScore);
+
+
+            //alert("form submitted");
+
+            /* This prevents the form from actually submitting and refreshing*/
+            event.preventDefault();
+        }
+
+    </script>
+</html>
